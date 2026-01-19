@@ -1,0 +1,12 @@
+name = "Formal Power Series, Locally Smooth"
+version = "0.1.0"
+defaultTargets = ["Formal Power Series, Locally Smooth"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "f897ebcf72cd16f89ab4577d0c826cd14afaafc7"
+
+[[lean_exe]]
+name = "Main File"
+root = "main"
