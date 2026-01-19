@@ -1,0 +1,256 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, amsthm}
+
+\title{Rings of Formal Power Series over \( \mathbb{R} \)}
+\author{}
+\date{}
+
+\begin{document}
+	
+	\maketitle
+	
+	\section{Introduction}
+	
+	In this document, we will discuss the concept of formal power series, which are infinite sums of the form:
+	
+	\[
+	f(x) = \sum_{n=0}^{\infty} a_n x^n
+	\]
+	
+	where \( a_n \in \mathbb{R} \) and \( x \) is a variable. The set of formal power series with real coefficients forms a ring, known as the \textbf{ring of formal power series} over \( \mathbb{R} \), denoted by \( \mathbb{R}[[x]] \).
+	
+	This ring plays a central role in algebra, analysis, and geometry, providing a way to handle infinite series without concerns about convergence.
+	
+	\section{Definition of Formal Power Series}
+	
+	A \textbf{formal power series} over \( \mathbb{R} \) is an expression of the form:
+	
+	\[
+	f(x) = \sum_{n=0}^{\infty} a_n x^n
+	\]
+	
+	where the coefficients \( a_n \) are elements of the ring \( \mathbb{R} \), and the variable \( x \) is indeterminate. The sum is not required to converge; it is simply a formal expression.
+	
+	\textbf{Note:} Unlike ordinary power series, we do not require formal power series to be convergent. In fact, the focus is on the algebraic manipulation of the series rather than its behavior as a function.
+	
+	\section{The Ring Structure \( \mathbb{R}[[x]] \)}
+	
+	The collection of all formal power series with real coefficients forms a ring, denoted by \( \mathbb{R}[[x]] \). This ring has the following structure:
+	
+	\begin{itemize}
+		\item \textbf{Addition:} The sum of two formal power series \( f(x) = \sum_{n=0}^{\infty} a_n x^n \) and \( g(x) = \sum_{n=0}^{\infty} b_n x^n \) is given by:
+		\[
+		(f + g)(x) = \sum_{n=0}^{\infty} (a_n + b_n) x^n
+		\]
+		where the coefficients are added component-wise.
+		
+		\item \textbf{Multiplication:} The product of two formal power series is given by the Cauchy product:
+		\[
+		(f \cdot g)(x) = \sum_{n=0}^{\infty} \left( \sum_{k=0}^{n} a_k b_{n-k} \right) x^n
+		\]
+		where the coefficient of \( x^n \) is the sum of all possible products of terms from the two series that result in \( x^n \).
+	\end{itemize}
+	
+	The ring \( \mathbb{R}[[x]] \) is equipped with addition and multiplication as described, and satisfies the following properties:
+	
+	\begin{itemize}
+		\item The zero element is the formal power series \( 0 = 0 + 0x + 0x^2 + \cdots \).
+		\item The multiplicative identity is the formal power series \( 1 = 1 + 0x + 0x^2 + \cdots \).
+		\item Formal power series are commutative and associative under both addition and multiplication.
+	\end{itemize}
+	
+	\section{Properties of Formal Power Series}
+	
+	Some important properties of formal power series are:
+	
+	\begin{itemize}
+		\item \textbf{Uniqueness:} Each formal power series can be uniquely represented by its coefficients. That is, there is a one-to-one correspondence between the elements of \( \mathbb{R}[[x]] \) and sequences of real numbers \( (a_0, a_1, a_2, \dots) \).
+		\item \textbf{Convergence:} Formal power series are not concerned with the issue of convergence. While we can treat them algebraically as if they are sums, we do not require them to converge for any specific value of \( x \).
+		\item \textbf{Differentiation:} Formal power series can be differentiated term by term:
+		\[
+		\frac{d}{dx} \left( \sum_{n=0}^{\infty} a_n x^n \right) = \sum_{n=1}^{\infty} n a_n x^{n-1}
+		\]
+	\end{itemize}
+	
+\section{The Ring of Functions Locally Smooth at 0}
+
+In this section, we define the ring of functions that are \textbf{locally smooth} at \( 0 \), and explore some of its key properties. A function is said to be locally smooth at \( 0 \) if it has derivatives of all orders at \( 0 \), and the Taylor series at \( 0 \) converges to the function in some neighborhood of \( 0 \).
+
+\subsection{Definition of Locally Smooth Functions at 0}
+
+Let \( \mathbb{R} \) be the real numbers, and let \( f: \mathbb{R} \to \mathbb{R} \) be a function. We say that \( f \) is \textbf{locally smooth at \( 0 \)} if:
+
+\begin{itemize}
+	\item There exists a neighborhood $V_{\delta(0)}$ around $0$ s. t. $f$ restricted to the neighborhood is smooth, so that $f|_{V_{\delta(0)}}$ is smooth.
+\end{itemize}
+
+\subsection{The Ring of Locally Smooth Functions at 0}
+
+The set of functions that are locally smooth at \( 0 \) forms a ring, often denoted by \( C^\infty_0 \) or \( C^\infty_{\text{loc}}(0) \). The ring operations are defined as follows:
+
+\begin{itemize}
+	\item \textbf{Addition:} If \( f \) and \( g \) are two locally smooth functions at \( 0 \), then their sum \( f + g \) is also a locally smooth function at \( 0 \), with the intersection of the neighborhood of $f$ and the neighborhood of $g$ where then:
+	\[
+	(f + g) = f + g
+	\]
+	is locally smooth.
+	\item \textbf{Multiplication:} If \( f \) and \( g \) are locally smooth at \( 0 \), their product \( f \cdot g \) is also locally smooth at \( 0 \), similar to the case of addition.
+	\[
+	(f \cdot g) = fg
+	\]
+\end{itemize}
+
+\subsection{Properties of the Ring of Locally Smooth Functions at 0}
+
+The ring of locally smooth functions at \( 0 \), \( C^\infty_0 \), possesses several important properties:
+
+\begin{itemize}
+	\item \textbf{Commutativity and Associativity:} The ring \( C^\infty_0 \) is commutative and associative under both addition and multiplication. This is due to the fact that addition and multiplication of smooth functions are commutative and associative.
+	
+	\item \textbf{Zero and Identity Elements:} The zero element in this ring is the function \( f(x) = 0 \), and the identity element is the function \( f(x) = 1 \). Both are locally smooth at \( 0 \).
+	
+	\item \textbf{Derivative Operation:} The operation of taking derivatives is a well-defined operation on \( C^\infty_0 \), and it preserves smoothness. That is, if \( f \) is locally smooth at \( 0 \), then so is \( f' \), \( f'' \), and all higher derivatives.
+	
+	\item \textbf{Subring of Smooth Functions:} The ring \( C^\infty_0 \) is a subring of the ring of smooth functions \( C^\infty(\mathbb{R}) \), but with the restriction that the functions are required to be smooth specifically at \( 0 \) and in its neighborhood.
+	
+	\item \textbf{Ideal Structure:} The set of functions in \( C^\infty_0 \) whose Taylor series at \( 0 \) vanishes (i.e., the functions for which all derivatives at \( 0 \) vanish) forms an ideal in the ring.
+\end{itemize}
+
+\subsection{Example: The Ring \( C^\infty_0 \)}
+
+Consider the function \( f(x) = e^{-x^2} \), which is smooth everywhere, and in particular, smooth at \( 0 \). The Taylor series expansion of \( f(x) \) at \( 0 \) is given by:
+
+\[
+f(x) = \sum_{n=0}^{\infty} (-1)^n \frac{x^{2n}}{(2n)!}.
+\]
+
+Since this series converges for all \( x \), \( f(x) \) is an element of the ring of locally smooth functions at \( 0 \).
+
+\subsection{Connection to Power Series and Analytic Functions}
+
+It is important to note that the ring of functions that are locally smooth at \( 0 \) can be seen as a subring of the ring of analytic functions at \( 0 \). An analytic function is a function that locally agrees with its Taylor series around a point (i.e., it is equal to its Taylor series in some neighborhood of the point). 
+
+Thus, every analytic function is locally smooth at \( 0 \), but not every locally smooth function is analytic. For example, a function whose Taylor series does not converge to the function everywhere but still has all derivatives at \( 0 \) would be in the ring of locally smooth functions at \( 0 \), but not in the ring of analytic functions at \( 0 \).
+
+\subsection{Conclusion}
+
+The ring of functions locally smooth at \( 0 \) provides a natural setting for the study of functions that can be locally expressed as power series with real coefficients. The properties of this ring, including its operations and ideal structure, make it a useful object in both pure and applied mathematics, particularly in the study of smooth functions and their Taylor expansions.
+
+\section{Ring Homomorphism between the Ring of Locally Smooth Functions at 0 and the Ring of Formal Power Series}
+
+In this section, we explore a ring homomorphism between the ring of functions that are locally smooth at \( 0 \), denoted \( C^\infty_0 \), and the ring of formal power series over \( \mathbb{R} \), denoted \( \mathbb{R}[[x]] \). The idea is to map each function in \( C^\infty_0 \) to its sequence of values of the n-th derivative evaluated at \( 0 \), which provides a natural connection between the two rings.
+
+\subsection{Definition of the Homomorphism}
+
+First we define the extraction functionals $E_n: C^\infty_0 \to \mathbb{R}$ by:
+
+\[
+E_n(f) = \lim_{x \to 0} \frac{d^{n}}{dx^{n}}\frac{f(x)}{n!}
+\]
+
+In the following I will denote elements of $\mathbb{R}[[x]]$ by their subsequent sequence so as $\{ a_n \}_{n \in \mathbb{N}}$.
+With this extraction operator we can define the map \( \varphi: C^\infty_0 \to \mathbb{R}[[x]] \) as follows:
+
+\[
+\varphi(f) = \{ E_n(f) \}_{n \in \mathbb{N}}
+\]
+
+where \( \{ E_n(f) \}_{n \in \mathbb{N}} \) denotes the \( n \)-th derivative of \( f \) evaluated at \( 0 \).
+
+\subsection{Proving its a Homomorphism}
+
+We now prove that the map $\varphi$ is a ring homomorphism.
+
+\begin{itemize}
+	\item \textbf{Preserves Addition:} For any two functions \( f, g \in C^\infty_0 \), the map \( \varphi \) preserves addition, i.e.,
+	
+	\[
+	\varphi(f + g) = \varphi(f) + \varphi(g).
+	\]
+	
+	This follows easily from the linearity of $E_n$ and to be more precise by the linearity of the limit and differentiation.
+	
+	\item \textbf{Preserves Multiplication:} The map \( \varphi \) also preserves multiplication. That is, for any two functions \( f, g \in C^\infty_0 \), we have:
+	
+	\[
+	\varphi(f \cdot g) = \varphi(f) \cdot \varphi(g).
+	\]
+	
+	We will first analyze the $E_n$ functional with the Leibniz Rule and we will denote the derivative by $D$ for notational reasons:
+	
+	\[
+	E_n(fg) = \lim_{x \to 0} D^{n} \frac{f(x) g(x)}{n!} = \lim_{x \to 0} \sum_{k=0}^{n} \frac{D^k f(x)}{k!} \cdot \frac{D^{n-k} g(x)}{(n-k)!} = \sum_{k=0}^{n} E_k(f) E_{n-k}(g)
+	\]
+	
+	which if we denote the sequence of $f$ by $a_n$ and the sequence of $g$ by $b_n$ then that would be:
+	
+	\[
+	\sum_{k=0}^{n} a_k b_{n-k}
+	\]
+	
+	 and as that holds for all $n$ it follows that $varphi$ preserves the multiplication.
+	
+	\item \textbf{Preserves the Identity:} The identity element in the ring \( C^\infty_0 \) is the constant function \( 1 \), and the identity element in the ring \( \mathbb{R}[[x]] \) is the formal power series \( 1 \). Clearly,
+	
+	\[
+	\varphi(1) = 1,
+	\]
+\end{itemize}
+
+Thus, the map \( \varphi \) is a well-defined ring homomorphism.
+
+\subsection{Injectivity and Surjectivity of the Homomorphism}
+
+Next, we examine the injectivity and surjectivity of the map \( \varphi \).
+
+\subsubsection{Injectivity}
+
+The map \( \varphi \) is injective if and only if the kernel of \( \varphi \) is trivial. The kernel of \( \varphi \) consists of those functions \( f \in C^\infty_0 \) for which:
+
+\[
+f^{(n)}(0) = 0 \quad \text{for all} \quad n \in \mathbb{N}.
+\]
+
+and one well known example of such a smooth function which is not the zero function is:
+
+\[
+f(x) = 
+\begin{cases} 
+	e^{-1/x^2} & \text{if } x \neq 0, \\
+	0 & \text{if } x = 0.
+\end{cases}
+\]
+
+so $\varphi$ is not injective. But one might be able to make it injective by taking the quotient of $C^{\infty}_0$ with a certain ideal / equivalence class. So that formal power series are isomorphic to equivalence classes of locally smooth (at 0) functions. The idea of using equivalence classes (of functions) instead of functions is for example also used in functional analysis for the $L^p$-Space so that one can define a norm instead of just a seminorm.
+
+\subsubsection{Surjectivity}
+
+The map \( \varphi \) is surjective if every formal power series in \( \mathbb{R}[[x]] \) corresponds to a function in \( C^\infty_0 \).  This is true and can be proven from Borels Lemma. For any given formal power series $\{ a_n \}_{n \in \mathbb{N}}$ we can use Borels Lemma to produce a smooth function which will be have:
+
+\[
+f^{(n)}(0) = a_n n! \quad \text{for all} \quad n \in \mathbb{N}.
+\]
+
+so $\varphi(f) = \{ a_n \}_{n \in \mathbb{N}}$ and we have shown that $\varphi$ is surjective.
+
+\subsection{Example of the Homomorphism}
+
+Let \( f(x) = \sin(x) \). The Taylor series of \( \sin(x) \) at \( 0 \) is:
+
+\[
+\sin(x) = \sum_{n=0}^{\infty} (-1)^n \frac{x^{2n+1}}{(2n+1)!}.
+\]
+
+Applying the homomorphism \( \varphi \), we obtain the formal power series corresponding to \( \sin(x) \):
+
+\[
+\varphi(\sin(x)) = \sum_{n=0}^{\infty} (-1)^n \frac{x^{2n+1}}{(2n+1)!}.
+\]
+
+Thus, \( \varphi(\sin(x)) \) is the formal power series that represents the function \( \sin(x) \) locally at \( 0 \).
+
+\section{Conclusion}
+
+The map \( \varphi \) from the ring of locally smooth functions at \( 0 \), \( C^\infty_0 \), to the ring of formal power series, \( \mathbb{R}[[x]] \), is a well-defined ring homomorphism that preserves both addition and multiplication. While the map is injective, it is not surjective onto the entire ring of formal power series. This homomorphism provides a natural connection between smooth functions and their corresponding formal power series expansions, offering insight into the structure of smooth functions around \( 0 \) and their algebraic properties.
+
+\end{document}
