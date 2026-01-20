@@ -10,6 +10,9 @@ The write up is about formal power series and defining a ring homomorphism betwe
 
    I just provided the unfinished file and the .tex file again and he didnt finish proving the surjectivity of phi via borels lemma.
 
+3. Run
+   I gave Aristotle the two files and in english additionally the task to prove the surjectivity of phi, but he did not add anything meaningful to the file. I might test it later again after having known more.
+
 Overall a good first impression of Aristotle, also the thought that it just continuously improves over time is very promising.
 
 Downside is that it quite takes some time so the iterative process is very limited.
