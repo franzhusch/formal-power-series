@@ -1,4 +1,4 @@
-# Exploration of a Formalization a small Write Up
+# Exploration of a Formalization, a small Write Up
 
 The write up is about formal power series and defining a ring homomorphism between formal power series and locally smooth functions at 0.
 
